@@ -20,14 +20,17 @@ try {
       secondList.push(rightNum);
     }
   }
+
   const rightHashMap = new Map<number, number>();
   for (const num of secondList) {
     rightHashMap.set(num, (rightHashMap.get(num) || 0) + 1);
   }
+
   let similarityScore = 0;
   for (const num of firstList) {
     similarityScore += (rightHashMap.get(num) || 0) * num;
   }
+
   console.log(similarityScore);
 } catch (error) {
   console.log(error);
